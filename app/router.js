@@ -37,6 +37,7 @@ router.get('/users', userController.getAllUsers);
  * Récupére le user présent a l'id mentionné dans la bdd
  * @route GET /user/{id}
  * @group Users - Présentation des users
+ * @param {number} id.path - id bookmaker
  * @returns {object} qui contient : id, first_name, last_name, mail, password 'Crypté',pseudo ,role
  */
 router.get('/user/:id(\\d+)', userController.getOneUser);
