@@ -35,7 +35,7 @@ router.get('/users', userController.getAllUsers);
 
 /**
  * Récupére le user présent a l'id mentionné dans la bdd
- * @route GET /user/:id
+ * @route GET /user/
  * @group Users - Présentation des users
  * @param {number} id.query - id du user
  * @returns {object} qui contient : id, first_name, last_name, mail, password 'Crypté',pseudo ,role
