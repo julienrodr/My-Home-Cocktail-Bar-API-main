@@ -37,7 +37,7 @@ router.get('/users', userController.getAllUsers);
  * Récupére le user présent a l'id mentionné dans la bdd
  * @route GET /user/:id
  * @group Users - Présentation des users
- * @param {number} id.params - id du user
+ * @param {number} id.query - id du user
  * @returns {object} qui contient : id, first_name, last_name, mail, password 'Crypté',pseudo ,role
  */
 router.get('/user/:id(\\d+)', userController.getOneUser);
@@ -46,11 +46,11 @@ router.get('/user/:id(\\d+)', userController.getOneUser);
  * Ajoute un nouveaux user
  * @route POST /user/register
  * @group Users - Présentation des users
- * @param {string} first_name.body - first_name de l'user
- * @param {string} last_name.body - last_name de l'user
- * @param {string} mail.body - Mail de l'user
- * @param {string} password.body - password de l'user
- * @param {string} pseudo.body - pseudo de l'user
+ * @param {string} first_name.query - first_name de l'user
+ * @param {string} last_name.query - last_name de l'user
+ * @param {string} mail.query - Mail de l'user
+ * @param {string} password.query - password de l'user
+ * @param {string} pseudo.query - pseudo de l'user
  * @returns {number} 200 - return l'id du user crée
  */
 router.post('/user/register', validateBody(postUserSchema), userController.saveNewUser);
