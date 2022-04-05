@@ -43,17 +43,17 @@ router.get('/users', userController.getAllUsers);
 router.get('/user/:id(\\d+)', userController.getOneUser);
 
 /**
- * @swagger
- * /user/register
- *  post:
- *      sumarry: Create a new user
- *      tags: [Users]
- *      requestBody:
- *          required: true
- *          content:
- *              application/json:
- *                  schema:
- *                  $ref: '#/shemas/user'
+ * Ajoute un nouveaux user
+ * @route POST /user/register
+ * @group Users - Présentation des users
+ * @param {string} first_name.query - first_name de l'user
+ * @param {string} last_name.query - last_name de l'user
+ * @param {string} mail.query - Mail de l'user
+ * @param {string} password.query - password de l'user
+ * @param {string} pseudo.query - pseudo de l'user
+ * @produces application/json application/xml
+ * @consumes application/json application/xml
+ * @returns {number} 200 - return l'id du user crée
  */
 router.post('/user/register', validateBody(postUserSchema), userController.saveNewUser);
 
