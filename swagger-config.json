@@ -5,7 +5,7 @@
       "title": "My-Home-Cocktail-bar-API",
       "version": "1.0.0"
     },
-    "host": "https://my-home-cocktail-bar-api.herokuapp.com",
+    "host": "my-home-cocktail-bar-api.herokuapp.com",
     "basePath": "/v1",
     "produces": [
       "application/json"
