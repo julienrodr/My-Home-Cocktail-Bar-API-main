@@ -54,15 +54,6 @@ router.get('/user/:id(\\d+)', userController.getOneUser);
  *              application/json:
  *                  schema:
  *                  $ref: '#/shemas/user'
- * Ajoute un nouveaux user
- * @route POST /user/register
- * @group Users - Présentation des users
- * @param {string} first_name.body - first_name de l'user
- * @param {string} last_name.body - last_name de l'user
- * @param {string} mail.body - Mail de l'user
- * @param {string} password.body - password de l'user
- * @param {string} pseudo.body - pseudo de l'user
- * @returns {number} 200 - return l'id du user crée
  */
 router.post('/user/register', validateBody(postUserSchema), userController.saveNewUser);
 
