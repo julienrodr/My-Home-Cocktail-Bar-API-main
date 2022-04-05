@@ -25,16 +25,68 @@ const { cocktailSchema, postCocktailSchema } = require('./shemas/cocktail');
 // v1
 // Users CRUD
 
+/**
+ * Récupére tout les users dans la bdd
+ * @route GET /users
+ * @group Users - Présentation des users
+ * @returns {object} qui contient : id, first_name, last_name, mail, password 'Crypté',pseudo ,role
+ */
 router.get('/users', userController.getAllUsers);
 
+/**
+ * Récupére le user présent a l'id mentionné dans la bdd
+ * @route GET /user/:id
+ * @group Users - Présentation des users
+ * @param {number} id.params - id du user
+ * @returns {object} qui contient : id, first_name, last_name, mail, password 'Crypté',pseudo ,role
+ */
 router.get('/user/:id(\\d+)', userController.getOneUser);
 
+/**
+ * Ajoute un nouveaux user
+ * @route POST /user/register
+ * @group Users - Présentation des users
+ * @param {string} first_name.body - first_name de l'user
+ * @param {string} last_name.body - last_name de l'user
+ * @param {string} mail.body - Mail de l'user
+ * @param {string} password.body - password de l'user
+ * @param {string} pseudo.body - pseudo de l'user
+ * @returns {number} 200 - return l'id du user crée
+ */
 router.post('/user/register', validateBody(postUserSchema), userController.saveNewUser);
 
+/**
+ * Modifie un user dans la bdd avec les infomation fournie dans le body
+ * @route PATCH /user/:id
+ * @group Users - Présentation des users
+ * @param {number} id.params - id du user
+ * @param {string} first_name.body - first_name de l'user
+ * @param {string} last_name.body - last_name de l'user
+ * @param {string} mail.body - Mail de l'user
+ * @param {string} password.body - password de l'user
+ * @param {string} pseudo.body - pseudo de l'user
+ * @param {string} role.body - role de l'user
+ * @returns {number} 200 - return l'id du user crée
+ */
 router.patch('/user/:id(\\d+)', validateBody(userSchema), userController.updateUser);
 
+/**
+ * Suprime le user présent a l'id mentioné dans la bdd
+ * @route DELETE /user/:id
+ * @group Users - Présentation des users
+ * @param {number} id.params - L'id du user
+ * @returns 200 - user suprimé de la bdd
+ */
 router.delete('/user/:id(\\d+)', userController.deleteUser);
 
+/**
+ * Route pour ce conecté
+ * @route POST /user/login
+ * @group users - Présentation des users
+ * @param {string} mail.body - Mail du user
+ * @param {password}password.body - Mots de passe du user
+ * @returns {object} 201 - le user et conecté
+ */
 router.post('/user/login', userController.userLogin);
 
 router.get('/user/logout', userController.logout);

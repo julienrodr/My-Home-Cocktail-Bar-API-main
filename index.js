@@ -27,6 +27,12 @@ app.use(session({
     }
 }));
 
+const expressSwagger = require('express-swagger-generator')(app);
+let options = require('./swagger-config.json');
+options.basedir = __dirname;
+
+expressSwagger(options);
+
 app.use('/v1', router);
 
 app.listen(port, () => { console.log(`Listening on http://localhost:${port}`) });
