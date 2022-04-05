@@ -82,7 +82,7 @@ router.delete('/user/:id(\\d+)', userController.deleteUser);
 /**
  * Route pour ce conecté
  * @route POST /user/login
- * @group users - Présentation des users
+ * @group Users - Présentation des users
  * @param {string} mail.body - Mail du user
  * @param {password}password.body - Mots de passe du user
  * @returns {object} 201 - le user et conecté
