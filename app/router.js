@@ -43,6 +43,17 @@ router.get('/users', userController.getAllUsers);
 router.get('/user/:id(\\d+)', userController.getOneUser);
 
 /**
+ * @swagger
+ * /user/register
+ *  post:
+ *      sumarry: Create a new user
+ *      tags: [Users]
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                  schema:
+ *                  $ref: '#/shemas/user'
  * Ajoute un nouveaux user
  * @route POST /user/register
  * @group Users - Présentation des users
