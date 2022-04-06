@@ -37,7 +37,7 @@ router.get('/users', userController.getAllUsers);
  * Récupére le user présent a l'id mentionné dans la bdd
  * @route GET /user/{id}
  * @group Users - Présentation des users
- * @param {number} id.path - id bookmaker
+ * @param {number} id.path - id user
  * @returns {object} qui contient : id, first_name, last_name, mail, password 'Crypté',pseudo ,role
  */
 router.get('/user/:id(\\d+)', userController.getOneUser);
@@ -57,14 +57,11 @@ router.post('/user/register', validateBody(postUserSchema), userController.saveN
  * Modifie un user dans la bdd avec les infomation fournie dans le body
  * @route PATCH /user/:id
  * @group Users - Présentation des users
- * @param {number} id.params - id du user
- * @param {string} first_name.body - first_name de l'user
- * @param {string} last_name.body - last_name de l'user
- * @param {string} mail.body - Mail de l'user
- * @param {string} password.body - password de l'user
- * @param {string} pseudo.body - pseudo de l'user
- * @param {string} role.body - role de l'user
- * @returns {number} 200 - return l'id du user crée
+ * @param {number} id.path - id user
+ * @param {User.model} user.body.required - {"first_name" : "","last_name" : "","mail": "","password": "","pseudo" : ""}
+ * @produces application/json application/xml
+ * @consumes application/json application/xml
+ * @returns {Array.<User>} User - Some description for user
  */
 router.patch('/user/:id(\\d+)', validateBody(userSchema), userController.updateUser);
 

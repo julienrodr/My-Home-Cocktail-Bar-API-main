@@ -35,8 +35,6 @@ D
 app/models/reward.js,e/c/ec71963c0c09a03e27b8b21903ee9ce3d4c8f6b7
 E
 app/shemas/garnish.js,b/3/b382fa2fe83f2be7ca734c366feb42a097929f24
-B
-app/models/user.js,8/5/857b3e06c08e1b5ed3cc3d5d4f574b8db9b135c2
 H
 app/models/softMapper.js,e/7/e7d68da5868dc5c9364f566bae21b170720b395c
 Q
