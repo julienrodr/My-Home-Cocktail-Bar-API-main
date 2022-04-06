@@ -69,7 +69,7 @@ router.patch('/user/:id(\\d+)', validateBody(userSchema), userController.updateU
  * Suprime le user présent a l'id mentioné dans la bdd
  * @route DELETE /user/{id}
  * @group Users - Présentation des users
- * @param {number} id.params - L'id du user
+ * @param {number} id.path - L'id du user
  * @returns 200 - user suprimé de la bdd
  */
 router.delete('/user/:id(\\d+)', userController.deleteUser);
@@ -80,10 +80,16 @@ router.delete('/user/:id(\\d+)', userController.deleteUser);
  * @group Users - Présentation des users
  * @param {string} mail.body - Mail du user
  * @param {password}password.body - Mots de passe du user
- * @returns {object} 201 - le user et conecté
+ * @returns {object} 201 - le user et connecter
  */
 router.post('/user/login', userController.userLogin);
 
+/**
+ * Route pour ce conecté
+ * @route GET /user/logout
+ * @group Users - Présentation des users
+ * @returns {object} 201 - le user et déconnecter
+ */
 router.get('/user/logout', userController.logout);
 
 // Reward CRUD
