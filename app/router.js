@@ -61,7 +61,6 @@ router.post('/user/register', validateBody(postUserSchema), userController.saveN
  * @param {User.model} user.body.required - {"first_name" : "","last_name" : "","mail": "","password": "","pseudo" : ""}
  * @produces application/json application/xml
  * @consumes application/json application/xml
- * @returns {Array.<User>} User - Some description for user
  */
 router.patch('/user/:id(\\d+)', validateBody(userSchema), userController.updateUser);
 
@@ -78,8 +77,7 @@ router.delete('/user/:id(\\d+)', userController.deleteUser);
  * Route pour ce conecté
  * @route POST /user/login
  * @group Users - Présentation des users
- * @param {string} mail.body - Mail du user
- * @param {password}password.body - Mots de passe du user
+ * @param {User.model} user.body.required - {"mail": "","password": ""}
  * @returns {object} 201 - le user et connecter
  */
 router.post('/user/login', userController.userLogin);
