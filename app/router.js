@@ -46,7 +46,7 @@ router.get('/user/:id(\\d+)', userController.getOneUser);
  * Ajoute un nouveaux user
  * @route POST /user/register
  * @group Users - Présentation des users
- * @param {postUserSchema} user.body.required  {"first_name" : "test","last_name" : "test","mail": "test@gmail.com","password": "test","pseudo" : "test"}
+ * @param {User} user.body.required  {"first_name" : "test","last_name" : "test","mail": "test@gmail.com","password": "test","pseudo" : "test"}
  * @produces application/json application/xml
  * @consumes application/json application/xml
  */
@@ -57,7 +57,7 @@ router.post('/user/register', validateBody(postUserSchema), userController.saveN
  * @route PATCH /user/{id}
  * @group Users - Présentation des users
  * @param {number} id.path - id user
- * @param {userSchema} user.body.required - {"first_name" : "","last_name" : "","mail": "","password": "","pseudo" : ""}
+ * @param {User} user.body.required - {"first_name" : "","last_name" : "","mail": "","password": "","pseudo" : ""}
  * @produces application/json application/xml
  * @consumes application/json application/xml
  */
@@ -76,7 +76,7 @@ router.delete('/user/:id(\\d+)', userController.deleteUser);
  * Route pour ce conecté
  * @route POST /user/login
  * @group Users - Présentation des users
- * @param {userSchema} user.body.required - {"mail": "","password": ""}
+ * @param {User} user.body.required - {"mail": "","password": ""}
  * @returns {object} 201 - le user et connecter
  */
 router.post('/user/login', userController.userLogin);
