@@ -46,14 +46,10 @@ router.get('/user/:id(\\d+)', userController.getOneUser);
  * Ajoute un nouveaux user
  * @route POST /user/register
  * @group Users - Présentation des users
- * @param {string} first_name.body - first_name de l'user
- * @param {string} last_name.body - last_name de l'user
- * @param {string} mail.body - Mail de l'user
- * @param {string} password.body - password de l'user
- * @param {string} pseudo.body - pseudo de l'user
+ * @param {User.model} user.body.required - the new user
  * @produces application/json application/xml
  * @consumes application/json application/xml
- * @returns {number} 200 - return l'id du user crée
+ * @returns {Array.<User>} User - Some description for user
  */
 router.post('/user/register', validateBody(postUserSchema), userController.saveNewUser);
 

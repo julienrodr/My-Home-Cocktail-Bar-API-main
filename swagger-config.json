@@ -13,6 +13,7 @@
 
   },
   "files": [
-    "./app/router.js"
+    "./app/router.js",
+    "./app/models/user.js"
   ]
 }
