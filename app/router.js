@@ -136,7 +136,7 @@ router.patch('/reward/:id(\\d+)', validateBody(rewardSchema), rewardController.u
  * @param {number} id.path - L'id du reward
  * @returns 200 - user suprimé de la bdd
  */
-router.delete('/reward/:id(\\d+)', alcoholController.deleteAlcohol);
+router.delete('/reward/:id(\\d+)', rewardController.deleteReward);
 
 // Soft CRUD
 
