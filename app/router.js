@@ -50,13 +50,7 @@ router.get('/user/:id(\\d+)', userController.getOneUser);
  * @produces application/json application/xml
  * @consumes application/json application/xml
  * @returns {Array.<User>} User - Some description for user
- * @example {
-    "first_name" : "test",
-    "last_name" : "test",
-    "mail": "test@gmail.com",
-    "password": "test",
-    "pseudo" : "test"
-}
+ * @example {"first_name" : "test","last_name" : "test","mail": "test@gmail.com","password": "test","pseudo" : "test}
  */
 router.post('/user/register', validateBody(postUserSchema), userController.saveNewUser);
 
