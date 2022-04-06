@@ -55,7 +55,7 @@ router.post('/user/register', validateBody(postUserSchema), userController.saveN
 
 /**
  * Modifie un user dans la bdd avec les infomation fournie dans le body
- * @route PATCH /user/:id
+ * @route PATCH /user/{id}
  * @group Users - Présentation des users
  * @param {number} id.path - id user
  * @param {User.model} user.body.required - {"first_name" : "","last_name" : "","mail": "","password": "","pseudo" : ""}
@@ -67,7 +67,7 @@ router.patch('/user/:id(\\d+)', validateBody(userSchema), userController.updateU
 
 /**
  * Suprime le user présent a l'id mentioné dans la bdd
- * @route DELETE /user/:id
+ * @route DELETE /user/{id}
  * @group Users - Présentation des users
  * @param {number} id.params - L'id du user
  * @returns 200 - user suprimé de la bdd
