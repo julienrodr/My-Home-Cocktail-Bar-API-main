@@ -3,8 +3,6 @@ C
 app/services/jwt.js,f/d/fd1ea944d8df1e9725aab6bae64fd1d12ec1b950
 F
 app/models/cocktail.js,e/b/eb9991b15609594033d068f89a13089f3b178d85
-B
-app/shemas/soft.js,e/3/e33e069c9ac770f14fe1d0637ae2d183a57b2c81
 F
 app/shemas/cocktail.js,7/4/744ae04cdbc728681c2af5d1e334711f4e758edf
 B

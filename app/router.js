@@ -160,7 +160,7 @@ router.get('/soft/:id(\\d+)', softController.getOneSoft);
 /**
  * Ajoute un nouveaux soft
  * @route POST /soft/register
- * @group Rewards - Présentation des reward
+ * @group Softs - Présentation des softs
  * @param {postSoftSchema.model} reward.body.required  {"name" : "test","describe" : "test"}
  * @produces application/json application/xml
  * @consumes application/json application/xml
@@ -170,7 +170,7 @@ router.post('/soft/register', validateBody(postSoftSchema), softController.saveN
 /**
  * Ajoute un update soft
  * @route PATCH /soft/{id}
- * @group Rewards - Présentation des reward
+ * @group Softs - Présentation des softs
  * @param {number} id.path - L'id du softs
  * @param {postSoftSchema.model} reward.body.required  {"name" : "test","describe" : "test"}
  * @produces application/json application/xml
@@ -181,7 +181,7 @@ router.patch('/soft/:id(\\d+)', validateBody(softSchema), softController.updateS
 /**
  * Suprime le soft présent a l'id mentioné dans la bdd
  * @route DELETE /soft/{id}
- * @group Rewards - Présentation des reward
+ * @group Softs - Présentation des softs
  * @param {number} id.path - L'id du reward
  * @returns 200 - La reward supprimer de la bdd
  */
