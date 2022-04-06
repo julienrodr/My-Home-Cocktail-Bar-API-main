@@ -91,14 +91,51 @@ router.get('/user/logout', userController.logout);
 
 // Reward CRUD
 
+/**
+ * Récupére toutes les rewards dans la bdd
+ * @route GET /rewards
+ * @group Rewards - Présentation des reward
+ * @returns {object} qui contient : id, name, describe
+ */
 router.get('/rewards', rewardController.getAllRewards);
 
+/**
+ * Récupére le user présent a l'id mentionné dans la bdd
+ * @route GET /reward/{id}
+ * @group Rewards - Présentation des reward
+ * @param {number} id.path - id user
+ * @returns {object} qui contient : Toute les reward
+ */
 router.get('/reward/:id(\\d+)', rewardController.getOneReward);
 
+/**
+ * Ajoute un nouveaux user
+ * @route POST /reward/register
+ * @group Rewards - Présentation des reward
+ * @param {rewardSchema.model} reward.body.required  {"name" : "test","describe" : "test"}
+ * @produces application/json application/xml
+ * @consumes application/json application/xml
+ */
 router.post('/reward/register', validateBody(postRewardSchema), rewardController.saveNewReward);
 
+/**
+ * Modifie une reward dans la bdd avec les infomation fournie dans le body
+ * @route PATCH /reward/:id(\d+)
+ * @group Rewards - Présentation des reward
+ * @param {number} id.path - id reward
+ * @param {rewardSchema.model} reward.body.required  {"name" : "test","describe" : "test"}
+ * @produces application/json application/xml
+ * @consumes application/json application/xml
+ */
 router.patch('/reward/:id(\\d+)', validateBody(rewardSchema), rewardController.updateReward);
 
+/**
+ * Suprime le reward présent a l'id mentioné dans la bdd
+ * @route DELETE /reward/:id(\d+)
+ * @group Rewards - Présentation des reward
+ * @param {number} id.path - L'id du reward
+ * @returns 200 - user suprimé de la bdd
+ */
 router.delete('/reward/:id(\\d+)', alcoholController.deleteAlcohol);
 
 // Soft CRUD
