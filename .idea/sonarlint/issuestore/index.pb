@@ -54,3 +54,13 @@ T
 $app/controllers/alcoholController.js,7/6/766f2fb27935e4cc0339a0869f98a95f26d9d91d
 ?
 app/database.js,7/4/748e11e6df2fcbabf21b0131415fef74b5ca5d23
+Q
+!migration/deploy/createDomain.sql,c/b/cb2fbb77193ccc24b9df01ff5f20b20b368254b1
+S
+#migration/deploy/initBddTableV1.sql,c/1/c16288e11c90b8467698cd89035518c7ce8f628d
+T
+$app/controllers/garnishController.js,8/8/8817ae3c61651b8e56e5563ce46b0682cd323c74
+<
+package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
+A
+package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
