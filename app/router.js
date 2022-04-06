@@ -134,20 +134,57 @@ router.patch('/reward/:id(\\d+)', validateBody(rewardSchema), rewardController.u
  * @route DELETE /reward/{id}
  * @group Rewards - Présentation des reward
  * @param {number} id.path - L'id du reward
- * @returns 200 - user suprimé de la bdd
+ * @returns 200 - La reward supprimer de la bdd
  */
 router.delete('/reward/:id(\\d+)', rewardController.deleteReward);
 
 // Soft CRUD
 
+/**
+ * Récupére touts les softs dans la bdd
+ * @route GET /softs
+ * @group Softs - Présentation des softs
+ * @returns {object} qui contient : id, name, describe
+ */
 router.get('/softs', softController.getAllSofts);
 
+/**
+ * Récupére touts les softs dans la bdd
+ * @route GET /softs/{id}
+ * @param {number} id.path - L'id du softs
+ * @group Softs - Présentation des softs
+ * @returns {object} qui contient : id, name, describe
+ */
 router.get('/soft/:id(\\d+)', softController.getOneSoft);
 
+/**
+ * Ajoute un nouveaux soft
+ * @route POST /soft/register
+ * @group Rewards - Présentation des reward
+ * @param {postSoftSchema.model} reward.body.required  {"name" : "test","describe" : "test"}
+ * @produces application/json application/xml
+ * @consumes application/json application/xml
+ */
 router.post('/soft/register', validateBody(postSoftSchema), softController.saveNewSoft);
 
+/**
+ * Ajoute un update soft
+ * @route PATCH /soft/{id}
+ * @group Rewards - Présentation des reward
+ * @param {number} id.path - L'id du softs
+ * @param {postSoftSchema.model} reward.body.required  {"name" : "test","describe" : "test"}
+ * @produces application/json application/xml
+ * @consumes application/json application/xml
+ */
 router.patch('/soft/:id(\\d+)', validateBody(softSchema), softController.updateSoft);
 
+/**
+ * Suprime le soft présent a l'id mentioné dans la bdd
+ * @route DELETE /soft/{id}
+ * @group Rewards - Présentation des reward
+ * @param {number} id.path - L'id du reward
+ * @returns 200 - La reward supprimer de la bdd
+ */
 router.delete('/soft/:id(\\d+)', softController.deleteSoft);
 
 // Garnish CRUD
