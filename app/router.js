@@ -120,7 +120,7 @@ router.post('/reward/register', validateBody(postRewardSchema), rewardController
 
 /**
  * Modifie une reward dans la bdd avec les infomation fournie dans le body
- * @route PATCH /reward/:id(\d+)
+ * @route PATCH /reward/{id}
  * @group Rewards - Présentation des reward
  * @param {number} id.path - id reward
  * @param {rewardSchema.model} reward.body.required  {"name" : "test","describe" : "test"}
@@ -131,7 +131,7 @@ router.patch('/reward/:id(\\d+)', validateBody(rewardSchema), rewardController.u
 
 /**
  * Suprime le reward présent a l'id mentioné dans la bdd
- * @route DELETE /reward/:id(\d+)
+ * @route DELETE /reward/{id}
  * @group Rewards - Présentation des reward
  * @param {number} id.path - L'id du reward
  * @returns 200 - user suprimé de la bdd

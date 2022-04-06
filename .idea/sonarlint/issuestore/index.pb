@@ -39,8 +39,6 @@ H
 app/models/softMapper.js,e/7/e7d68da5868dc5c9364f566bae21b170720b395c
 Q
 !app/controllers/softController.js,3/2/328772004f57d32cad8efc44f058ee15336bea3d
-D
-app/shemas/reward.js,f/2/f2aaf8084a5eb199bfa1c30cdfffbf404f142152
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
