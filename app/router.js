@@ -46,7 +46,7 @@ router.get('/user/:id(\\d+)', userController.getOneUser);
  * Ajoute un nouveaux user
  * @route POST /user/register
  * @group Users - Présentation des users
- * @param {postUserSchema.model} user.body.required  {"first_name" : "test","last_name" : "test","mail": "test@gmail.com","password": "test","pseudo" : "test}
+ * @param {User.model} user.body.required  {"first_name" : "test","last_name" : "test","mail": "test@gmail.com","password": "test","pseudo" : "test}
  * @produces application/json application/xml
  * @consumes application/json application/xml
  */
