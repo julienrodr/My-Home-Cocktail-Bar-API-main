@@ -44,7 +44,7 @@ const userControllers = {
 
             await userMapper.saveNewUser(newUser);
 
-            res.status(201).json(newUser.id);
+            res.status(201).json(newUser);
 
         } catch (err) {
             res.status(403).json(err.message);
