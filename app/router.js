@@ -257,7 +257,7 @@ router.get('/alcohol/:id(\\d+)', alcoholController.getOneAlcohol);
 /**
  * Ajoute un nouveaux alcohol
  * @route POST /alcohol/register
- * @group Alcohols - Présentation des alcohols
+ * @group Alcohol - Présentation des alcohols
  * @param {postAlcoholSchema.model} garnish.body.required  {"name" : "test","describe" : "test", "localisation": "test", "category": "test", "nose": "test", "brand": "test" }
  * @produces application/json application/xml
  * @consumes application/json application/xml
@@ -267,7 +267,7 @@ router.post('/alcohol/register', validateBody(postAlcoholSchema), alcoholControl
 /**
  * Ajoute un update alcohol
  * @route PATCH /alcohol/{id}
- * @group Alcohols - Présentation des alcohols
+ * @group Alcohol - Présentation des alcohols
  * @param {number} id.path - L'id du alcohol
  * @param {postAlcoholSchema.model} soft.body.required  {"name" : "test","describe" : "test", "localisation": "test", "category": "test", "nose": "test", "brand": "test" }
  * @produces application/json application/xml
@@ -278,7 +278,7 @@ router.patch('/alcohol/:id(\\d+)', validateBody(alcoholSchema), alcoholControlle
 /**
  * Suprime le alcohol présent a l'id mentioné dans la bdd
  * @route DELETE /alcohol/{id}
- * @group Alcohols - Présentation des alcohols
+ * @group Alcohol - Présentation des alcohols
  * @param {number} id.path - L'id du alcohols
  * @returns 200 - Le alcohol supprimer de la bdd
  */
