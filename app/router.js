@@ -191,7 +191,7 @@ router.delete('/soft/:id(\\d+)', softController.deleteSoft);
 /**
  * Récupére touts les garnishs dans la bdd
  * @route GET /garnish
- * @group Garnish - Présentation des Garnish
+ * @group Garnishs - Présentation des Garnish
  * @returns {object} qui contient : id, name, describe
  */
 router.get('/garnish', garnishController.getAllGarnish);
@@ -199,7 +199,7 @@ router.get('/garnish', garnishController.getAllGarnish);
 /**
  * Récupére touts les garnishs dans la bdd
  * @route GET /garnish/{id}
- * @group Garnish - Présentation des Garnish
+ * @group Garnishs - Présentation des Garnish
  * @param {number} id.path - L'id du garnish
  * @returns {object} qui contient : id, name, describe
  */
@@ -240,7 +240,7 @@ router.delete('/garnish/:id(\\d+)', garnishController.deleteGarnish);
 /**
  * Récupére touts les alcohol dans la bdd
  * @route GET /alcohol
- * @group Alcohol - Présentation des Alcohol
+ * @group Alcohols - Présentation des Alcohol
  * @returns {object} qui contient : id, name, describe
  */
 router.get('/alcohols', alcoholController.getAllAlcohols);
@@ -248,7 +248,7 @@ router.get('/alcohols', alcoholController.getAllAlcohols);
 /**
  * Récupére touts les alcohol dans la bdd
  * @route GET /alcohol/{id}
- * @group Alcohol - Présentation des alcohol
+ * @group Alcohols - Présentation des alcohol
  * @param {number} id.path - L'id du alcohol
  * @returns {object} qui contient : id, name, describe
  */
@@ -257,7 +257,7 @@ router.get('/alcohol/:id(\\d+)', alcoholController.getOneAlcohol);
 /**
  * Ajoute un nouveaux alcohol
  * @route POST /alcohol/register
- * @group Alcohol - Présentation des alcohols
+ * @group Alcohols - Présentation des alcohols
  * @param {postAlcoholSchema.model} garnish.body.required  {"name" : "test","describe" : "test", "localisation": "test", "category": "test", "nose": "test", "brand": "test" }
  * @produces application/json application/xml
  * @consumes application/json application/xml
@@ -267,7 +267,7 @@ router.post('/alcohol/register', validateBody(postAlcoholSchema), alcoholControl
 /**
  * Ajoute un update alcohol
  * @route PATCH /alcohol/{id}
- * @group Alcohol - Présentation des alcohols
+ * @group Alcohols - Présentation des alcohols
  * @param {number} id.path - L'id du alcohol
  * @param {postAlcoholSchema.model} soft.body.required  {"name" : "test","describe" : "test", "localisation": "test", "category": "test", "nose": "test", "brand": "test" }
  * @produces application/json application/xml
@@ -278,7 +278,7 @@ router.patch('/alcohol/:id(\\d+)', validateBody(alcoholSchema), alcoholControlle
 /**
  * Suprime le alcohol présent a l'id mentioné dans la bdd
  * @route DELETE /alcohol/{id}
- * @group Alcohol - Présentation des alcohols
+ * @group Alcohols - Présentation des alcohols
  * @param {number} id.path - L'id du alcohols
  * @returns 200 - Le alcohol supprimer de la bdd
  */
